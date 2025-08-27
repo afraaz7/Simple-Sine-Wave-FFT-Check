@@ -10,7 +10,7 @@ int main(){
 
         cudaDeviceProp devProp;
 
-        cudGetDeviceProperties(&devProp);
+        cudGetDeviceProperties(&devProp, 0);
         float pkbdwidth = 2.0 * devProp.memoryClockRate * (devProp.memoryBusWidth/8) / 1e6 << " GB/s" << std::endl;
         std::cout << "Name of the Device: " << devProp.name << std::endl;
         std::cout << "Max Threads Per Block: " << devProp.maxThreadsPerBlock << std::endl;
@@ -26,3 +26,4 @@ int main(){
         return 0;
 
 }
+
